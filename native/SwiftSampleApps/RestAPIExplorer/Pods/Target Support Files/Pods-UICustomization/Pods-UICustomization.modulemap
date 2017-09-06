@@ -1,6 +1,0 @@
-framework module Pods_UICustomization {
-  umbrella header "Pods-UICustomization-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,0 +1,10 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/CocoaLumberjack" "$PODS_CONFIGURATION_BUILD_DIR/DesignSystem" "$PODS_CONFIGURATION_BUILD_DIR/ReachabilitySwift" "$PODS_CONFIGURATION_BUILD_DIR/RxSwift" "$PODS_CONFIGURATION_BUILD_DIR/SalesforceAnalytics" "$PODS_CONFIGURATION_BUILD_DIR/SalesforceSDKCore" "$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/CocoaLumberjack/CocoaLumberjack.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/DesignSystem/DesignSystem.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ReachabilitySwift/ReachabilitySwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/RxSwift/RxSwift.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SalesforceAnalytics/SalesforceAnalytics.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SalesforceSDKCore/SalesforceSDKCore.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON/SwiftyJSON.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "CocoaLumberjack" -framework "DesignSystem" -framework "ReachabilitySwift" -framework "RxSwift" -framework "SalesforceAnalytics" -framework "SalesforceSDKCore" -framework "SwiftyJSON"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods
