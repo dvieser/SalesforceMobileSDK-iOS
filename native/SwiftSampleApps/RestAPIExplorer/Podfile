@@ -1,0 +1,22 @@
+platform :ios, '9.0'
+use_frameworks!
+
+source 'ssh://git@github.com/forcedotcom/SalesforceMobileSDK-iOS-Specs.git'
+source 'ssh://git@github.com/CocoaPods/Specs.git'
+
+def installed_pods
+  pod 'SalesforceSDKCore', '~> 5'
+  pod 'SmartStore', '~> 5'
+  pod 'SmartSync', '~> 5'
+  pod 'DesignSystem', '~> 2.0'
+  pod 'SwiftyJSON', '~> 3.1'
+  pod 'MUPullToRefresh', '1.0.1'
+  pod 'THCalendarDatePicker', '1.2.8'
+  pod 'RxSwift', '~> 3'
+  pod 'ReachabilitySwift', '~> 3'
+end
+
+
+target 'UICustomization' do
+  installed_pods
+end
