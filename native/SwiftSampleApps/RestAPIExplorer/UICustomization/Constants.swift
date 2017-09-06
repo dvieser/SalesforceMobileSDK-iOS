@@ -17,7 +17,6 @@ enum Constants {
     static let DisplayMessageNotification = "DisplayMessageNotification"
     static let DisplayDetailMessageNotification = "DisplayDetailMessageNotification"
     static let PinChangedNotification = "PinChangedNotification"
-    static let SettingsChangedNotification = CSSettingsChangedNotification
     static let HomeStatTilesChangedNotification = "HomeStatTilesChangedNotification"
     static let VisitStatTilesChangedNotification = "VisitStatTilesChangedNotification"
     static let OpportunitiesChangedNotification = "OpportunitiesChangedNotification"

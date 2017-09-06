@@ -7,18 +7,10 @@
 //
 
 import Foundation
-import SmartStore
 import SwiftyJSON
-import SmartSync
+import SalesforceSDKCore
 
 class SalesforceHelper {
-
-    static let timeDidExpireSelector: Selector = #selector(SalesforceHelper.timeDidExpire(_:))
-    static let soupsArray: [CSRecordStore] = [
-                                AccountStore.instance,
-                                ContactStore.instance,
-                            ]
-    
 
     static func startup(_ appDelegate: AppDelegate) { // , completion: (() -> Void)? ) {
         var infoLogLevel: String? = Bundle.main.infoDictionary!["SF_LOG_LEVEL"] as? String
@@ -28,7 +20,6 @@ class SalesforceHelper {
         SFLogger.shared().logLevel = SFLogger.logLevel(for: infoLogLevel!)
         
         
-        SalesforceSDKManager.setInstanceClass(SalesforceSDKManagerWithSmartStore.self)
         SalesforceSDKManager.shared().connectedAppId = Constants.connectedAppId
         SalesforceSDKManager.shared().connectedAppCallbackUri = Constants.connectedAppCallbackUri
         SalesforceSDKManager.shared().authScopes = ["web", "api"]
@@ -38,20 +29,6 @@ class SalesforceHelper {
             (launchActionList: SFSDKLaunchAction) in
             let launchActionString = SalesforceSDKManager.launchActionsStringRepresentation(launchActionList)
             SFLogger.log(.info, msg:"Post-launch: launch actions taken: \(launchActionString)");
-
-            registerStores()
-
-//            CSSettingsStore.instance.syncDownSettings(nil)
-            
-            CSSettingsStore.instance.syncDownSettings() { (settings: Settings, succeeded: Bool) in
-//                LocationManager.sharedInstance.start()
-//                setUserDefaults()
-//                checkPackageVersion(settings)
-                prefetchInBackground(settings) { success in
-                    CSStoreManager.instance.syncUp()
-                    appDelegate.timer = Timer.scheduledTimer(timeInterval: 3600, target: self, selector: timeDidExpireSelector, userInfo: nil, repeats: true)
-                }
-            }
 
             
             
@@ -115,28 +92,6 @@ class SalesforceHelper {
 //        
     }
     
-    static func prefetchInBackground(_ settings: Settings, completion: ((Bool) -> Void)? = nil) {
-        let beginDate: Date = Date().dateWithMinimumTimeComponents(Calendar.current)
-        for store: CSRecordStore in soupsArray {
-            CSStoreManager.instance.retrieveStore(store.objectType).prefetch(beginDate, endDate: nil, onCompletion: nil)
-        }
-        CSPageLayoutStore.instance.prefetch() {success in
-            completion?(success)
-        }
-    }
-    
-    static var objectList: String {
-        return soupsArray.reduce("") {text, store in "\(text)\(store.objectType)," }
-        
-//        var returnString = ""
-//        for store: CSRecordStore in soupsArray {
-//            returnString.append(store.objectType)
-//            //            returnString.append(CSStoreManager.instance.retrieveStore.objectType)
-//        }
-//        return returnString
-    }
-
-    
     static func getUserId() -> String {
         return SFUserAccountManager.sharedInstance().currentUser!.idData.userId
     }
@@ -163,25 +118,6 @@ class SalesforceHelper {
         return SFUserAccountManager.sharedInstance().currentUser!.fullName
     }
 
-    @objc fileprivate static func timeDidExpire(_ timer: Timer) {
-        CSStoreManager.instance.syncUp()
-    }
-            //
-            //    static func clearSoups() {
-            //        for store: CSRecordStore in soupsArray {
-            //            store.smartStore.clearSoup(store.objectType)
-            //            CSStoreManager.instance.retrieveStore(store.objectType).objectObservable.onNext([])
-            //        }
-            ////        StatTileStore.instance.smartStore.clearSoup(StatTileStore.instance.objectType)
-            ////        postAllChangedNotifications()
-            //    }
-            //    
-    static func registerStores() {
-        CSStoreManager.instance.endpoint = Constants.endpoint
-        for store: CSRecordStore in soupsArray {
-            CSStoreManager.instance.registerStore(store)
-        }
-    }
 
     //
 //    static func postAllChangedNotifications(_ completion: (() -> ())? = nil) {

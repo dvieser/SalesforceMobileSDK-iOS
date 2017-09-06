@@ -9,13 +9,11 @@
 /* Begin PBXBuildFile section */
 		4FD6C47A1B754AF1002F9F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6C4791B754AF1002F9F90 /* AppDelegate.swift */; };
 		4FD6C4811B754AF1002F9F90 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FD6C4801B754AF1002F9F90 /* Images.xcassets */; };
-		A582EA380DFD6AC24571AAD2 /* Pods_UICustomization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC13CA8AA27E784730D713C /* Pods_UICustomization.framework */; };
 		C8BE11AC89759EE481AD0513 /* Pods_RestAPIExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FB4876EAAFCEADA711A513 /* Pods_RestAPIExplorer.framework */; };
-		EED37C311EE6FF7F0020EFE9 /* SFLocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED37C301EE6FF7F0020EFE9 /* SFLocalizedString.swift */; };
+		EE91E16F1F609CDF00581AFB /* RestAPIExplorerView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE91E16E1F609CDF00581AFB /* RestAPIExplorerView.storyboard */; };
 		EED37C351EE6FF970020EFE9 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED37C321EE6FF970020EFE9 /* NSDate.swift */; };
 		EED37C361EE6FF970020EFE9 /* NSDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED37C331EE6FF970020EFE9 /* NSDateFormatter.swift */; };
 		EED37C371EE6FF970020EFE9 /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED37C341EE6FF970020EFE9 /* NSURL.swift */; };
-		EED37C571EEAEB450020EFE9 /* ObjectLabelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED37C561EEAEB450020EFE9 /* ObjectLabelProtocol.swift */; };
 		EED37C5D1EEAEC140020EFE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED37C5C1EEAEC140020EFE9 /* Constants.swift */; };
 		EED37C5F1EEAEC6F0020EFE9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED37C5E1EEAEC6F0020EFE9 /* UIColor.swift */; };
 		EEFCF2301EDF27130058320A /* SalesforceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFCF22F1EDF27130058320A /* SalesforceHelper.swift */; };
@@ -36,11 +34,10 @@
 		4FD6C4801B754AF1002F9F90 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4FD6C49A1B755242002F9F90 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		762732C14CFE40A989C3AD70 /* Pods-UICustomization.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UICustomization.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UICustomization/Pods-UICustomization.debug.xcconfig"; sourceTree = "<group>"; };
-		EED37C301EE6FF7F0020EFE9 /* SFLocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFLocalizedString.swift; sourceTree = "<group>"; };
+		EE91E16E1F609CDF00581AFB /* RestAPIExplorerView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestAPIExplorerView.storyboard; sourceTree = "<group>"; };
 		EED37C321EE6FF970020EFE9 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		EED37C331EE6FF970020EFE9 /* NSDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatter.swift; sourceTree = "<group>"; };
 		EED37C341EE6FF970020EFE9 /* NSURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
-		EED37C561EEAEB450020EFE9 /* ObjectLabelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectLabelProtocol.swift; sourceTree = "<group>"; };
 		EED37C5C1EEAEC140020EFE9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EED37C5E1EEAEC6F0020EFE9 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		EEFCF22F1EDF27130058320A /* SalesforceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesforceHelper.swift; sourceTree = "<group>"; };
@@ -54,7 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A582EA380DFD6AC24571AAD2 /* Pods_UICustomization.framework in Frameworks */,
 				C8BE11AC89759EE481AD0513 /* Pods_RestAPIExplorer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,9 +123,7 @@
 		EED37C2F1EE6FF6D0020EFE9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EED37C561EEAEB450020EFE9 /* ObjectLabelProtocol.swift */,
 				EED37C5E1EEAEC6F0020EFE9 /* UIColor.swift */,
-				EED37C301EE6FF7F0020EFE9 /* SFLocalizedString.swift */,
 				EED37C321EE6FF970020EFE9 /* NSDate.swift */,
 				EED37C331EE6FF970020EFE9 /* NSDateFormatter.swift */,
 				EED37C341EE6FF970020EFE9 /* NSURL.swift */,
@@ -167,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				EED37C4F1EE72CA00020EFE9 /* Base */,
+				EE91E16E1F609CDF00581AFB /* RestAPIExplorerView.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -234,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE91E16F1F609CDF00581AFB /* RestAPIExplorerView.storyboard in Resources */,
 				EEFCF2371EDF2F9A0058320A /* Main.storyboard in Resources */,
 				4FD6C4811B754AF1002F9F90 /* Images.xcassets in Resources */,
 			);
@@ -299,11 +295,9 @@
 				EED37C5F1EEAEC6F0020EFE9 /* UIColor.swift in Sources */,
 				EEFCF2381EDF2F9A0058320A /* ContainerViewController.swift in Sources */,
 				EED37C371EE6FF970020EFE9 /* NSURL.swift in Sources */,
-				EED37C311EE6FF7F0020EFE9 /* SFLocalizedString.swift in Sources */,
 				EED37C351EE6FF970020EFE9 /* NSDate.swift in Sources */,
 				EEFCF2301EDF27130058320A /* SalesforceHelper.swift in Sources */,
 				EED37C361EE6FF970020EFE9 /* NSDateFormatter.swift in Sources */,
-				EED37C571EEAEB450020EFE9 /* ObjectLabelProtocol.swift in Sources */,
 				EED37C5D1EEAEC140020EFE9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
